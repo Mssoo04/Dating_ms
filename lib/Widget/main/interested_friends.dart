@@ -1,4 +1,4 @@
-import 'package:dating/screen/main_favorite.dart';
+import 'package:dating/Widget/main/main_favorite.dart';
 import 'package:flutter/material.dart';
 
 class InterestedFriends extends StatelessWidget {
@@ -9,6 +9,7 @@ class InterestedFriends extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Text(
             '내가 관심 있는 친구',
