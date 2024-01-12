@@ -31,4 +31,9 @@ class IconShape {
       Icon(Icons.notifications_outlined, size: 30, color: Colors.black);
 
   static const iconAdd = Icon(Icons.add, size: 30, color: Colors.white);
+
+  static const iconMore = Icon(Icons.more_horiz, color: Colors.black);
+
+  static const iconArrowForward =
+      Icon(Icons.arrow_forward_ios, size: 15, color: iconColor);
 }

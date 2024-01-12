@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: HomeScreen(),
+      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
       initialBinding: InitBinding(),
     );

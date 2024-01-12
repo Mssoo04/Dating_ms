@@ -2,14 +2,14 @@ import 'package:dating/style/constant.dart';
 import 'package:dating/style/icon_shape.dart';
 import 'package:flutter/material.dart';
 
-class SetNumFemale extends StatefulWidget {
-  const SetNumFemale({super.key});
+class SetNumMale extends StatefulWidget {
+  const SetNumMale({super.key});
 
   @override
-  State<SetNumFemale> createState() => _SetNumFemaleState();
+  State<SetNumMale> createState() => _SetNumMaleState();
 }
 
-class _SetNumFemaleState extends State<SetNumFemale> {
+class _SetNumMaleState extends State<SetNumMale> {
   int numberMale = 0;
 
   void increment() {
@@ -31,20 +31,19 @@ class _SetNumFemaleState extends State<SetNumFemale> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        IconShape.iconFemale,
+        IconShape.iconMale,
         const SizedBox(width: 10),
         Container(
           width: width * 0.3,
-          height: height * 0.04,
+          height: 40,
           decoration: BoxDecoration(
             color: inputColor,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(100),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -52,7 +51,9 @@ class _SetNumFemaleState extends State<SetNumFemale> {
             children: [
               IconButton(
                 onPressed: decrement,
-                icon: const Icon(Icons.remove),
+                icon: const Icon(
+                  Icons.remove,
+                ),
               ),
               Text(
                 '$numberMale',

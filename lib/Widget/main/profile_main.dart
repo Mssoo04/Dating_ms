@@ -13,9 +13,12 @@ class _ProfileMainState extends State<ProfileMain> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Container(
-      width: MediaQuery.of(context).size.width * 0.8,
-      height: MediaQuery.of(context).size.height * 0.8,
+      width: width * 0.8,
+      height: height * 0.8,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: Colors.grey,
@@ -36,12 +39,12 @@ class _ProfileMainState extends State<ProfileMain> {
               widget.user.image ??
                   'https://image.news1.kr/system/photos/2022/12/16/5742694/article.jpg/dims/quality/80/optimize',
               fit: BoxFit.cover,
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height * 0.8,
+              width: width * 0.8,
+              height: height * 0.8,
             ),
             Positioned(
-              bottom: MediaQuery.of(context).size.width * 0.45,
-              left: MediaQuery.of(context).size.height * 0.04,
+              bottom: width * 0.45,
+              left: height * 0.04,
               child: Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 2.5),
@@ -59,8 +62,8 @@ class _ProfileMainState extends State<ProfileMain> {
               ),
             ),
             Positioned(
-              bottom: MediaQuery.of(context).size.width * 0.3,
-              left: MediaQuery.of(context).size.height * 0.04,
+              bottom: width * 0.3,
+              left: height * 0.04,
               child: Text(
                 '${widget.user.name}',
                 style: const TextStyle(
@@ -70,8 +73,8 @@ class _ProfileMainState extends State<ProfileMain> {
               ),
             ),
             Positioned(
-              bottom: MediaQuery.of(context).size.width * 0.22,
-              left: MediaQuery.of(context).size.height * 0.04,
+              bottom: width * 0.22,
+              left: height * 0.04,
               child: Row(
                 children: [
                   const Icon(
@@ -90,8 +93,8 @@ class _ProfileMainState extends State<ProfileMain> {
               ),
             ),
             Positioned(
-              bottom: MediaQuery.of(context).size.width * 0.17,
-              left: MediaQuery.of(context).size.height * 0.04,
+              bottom: width * 0.17,
+              left: height * 0.04,
               child: const Row(
                 children: [
                   Icon(Icons.location_on, color: Colors.white, size: 20),
@@ -106,8 +109,8 @@ class _ProfileMainState extends State<ProfileMain> {
               ),
             ),
             Positioned(
-              bottom: MediaQuery.of(context).size.width * 0.035,
-              left: MediaQuery.of(context).size.height * 0.04,
+              bottom: width * 0.035,
+              left: height * 0.03,
               child: Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 90, vertical: 11.5),
@@ -125,26 +128,13 @@ class _ProfileMainState extends State<ProfileMain> {
               ),
             ),
             Positioned(
-              bottom: MediaQuery.of(context).size.width * 0.024,
-              left: MediaQuery.of(context).size.height * 0.372,
-              child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _isClicked = !_isClicked;
-                  });
-                  ();
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: _isClicked ? Colors.red : Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Icon(
-                    Icons.favorite,
-                    color: _isClicked ? Colors.white : Colors.red,
-                    size: 320,
-                  ),
+              bottom: width * 0.024,
+              left: height * 0.38,
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFFF006B),
+                  borderRadius: BorderRadius.circular(20),
                 ),
               ),
             ),
