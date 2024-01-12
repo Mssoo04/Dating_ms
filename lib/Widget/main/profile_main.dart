@@ -1,9 +1,15 @@
 import 'package:dating/data/model/user.dart';
 import 'package:flutter/material.dart';
 
-class ProfileMain extends StatelessWidget {
+class ProfileMain extends StatefulWidget {
   final User user;
   const ProfileMain({super.key, required this.user});
+  @override
+  _ProfileMainState createState() => _ProfileMainState();
+}
+
+class _ProfileMainState extends State<ProfileMain> {
+  bool _isClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +33,7 @@ class ProfileMain extends StatelessWidget {
         child: Stack(
           children: [
             Image.network(
-              user.image ??
+              widget.user.image ??
                   'https://image.news1.kr/system/photos/2022/12/16/5742694/article.jpg/dims/quality/80/optimize',
               fit: BoxFit.cover,
               width: MediaQuery.of(context).size.width * 0.8,
@@ -56,7 +62,7 @@ class ProfileMain extends StatelessWidget {
               bottom: MediaQuery.of(context).size.width * 0.3,
               left: MediaQuery.of(context).size.height * 0.04,
               child: Text(
-                '${user.name}',
+                '${widget.user.name}',
                 style: const TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
@@ -74,7 +80,7 @@ class ProfileMain extends StatelessWidget {
                     size: 20,
                   ),
                   Text(
-                    '${user.residence} ${user.height}cm',
+                    '${widget.user.residence} ${widget.user.height}cm',
                     style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
@@ -121,13 +127,25 @@ class ProfileMain extends StatelessWidget {
             Positioned(
               bottom: MediaQuery.of(context).size.width * 0.024,
               left: MediaQuery.of(context).size.height * 0.372,
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFFF006B),
-                  borderRadius: BorderRadius.circular(20),
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _isClicked = !_isClicked;
+                  });
+                  ();
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: _isClicked ? Colors.red : Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Icon(
+                    Icons.favorite,
+                    color: _isClicked ? Colors.white : Colors.red,
+                    size: 320,
+                  ),
                 ),
-                child: Image.asset('assets/heart.png'),
               ),
             ),
           ],
